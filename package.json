@@ -7,7 +7,7 @@
     "lint": "standard",
     "test": "ava",
     "test:watch": "ava --watch",
-    "dev": "nodemon index"
+    "dev": "nodemon server.js"
   },
   "keywords": [
     "gitlab",
