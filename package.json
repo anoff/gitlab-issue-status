@@ -1,0 +1,26 @@
+{
+  "name": "gitlab-issue-status",
+  "version": "0.1.0",
+  "description": "get icons for gitlab issue status",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard",
+    "dev": "nodemon index"
+  },
+  "keywords": [
+    "gitlab",
+    "issue",
+    "icon",
+    "status"
+  ],
+  "author": "Andreas Offenhaeuser <https://anoff.io>",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^1.17.4",
+    "standard": "^11.0.1"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "dotenv": "^5.0.1"
+  }
+}
