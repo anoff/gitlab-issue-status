@@ -4,7 +4,9 @@
   "description": "get icons for gitlab issue status",
   "main": "index.js",
   "scripts": {
-    "test": "standard",
+    "lint": "standard",
+    "test": "ava",
+    "test:watch": "ava --watch",
     "dev": "nodemon index"
   },
   "keywords": [
@@ -16,6 +18,7 @@
   "author": "Andreas Offenhaeuser <https://anoff.io>",
   "license": "MIT",
   "devDependencies": {
+    "ava": "^0.25.0",
     "nodemon": "^1.17.4",
     "standard": "^11.0.1"
   },
