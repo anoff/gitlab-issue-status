@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "canvas": "^2.0.0-alpha.12",
     "dotenv": "^5.0.1"
   }
 }
