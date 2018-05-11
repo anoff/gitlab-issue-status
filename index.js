@@ -1,10 +1,11 @@
 const axios = require('axios')
 require('dotenv').config()
+const fs = require('fs')
 const {tagToUrl} = require('./lib/gitlab')
+
 const issue = 'rcs/generic/hwp-docs#5'
 const baseUrl = process.env.GITLAB_API_URL
 const token = process.env.GITLAB_ACCESS_KEY
-
 const issueUrl = tagToUrl(issue, baseUrl)
 
 axios.get(issueUrl, {
@@ -22,20 +23,27 @@ axios.get(issueUrl, {
     console.log(issue)
   })
 
-const { createCanvas } = require('canvas')
-const canvas = createCanvas(200, 200)
-const ctx = canvas.getContext('2d')
+const http = require('http')
+const port = 8080
 
-// Write "Awesome!"
-ctx.rotate(0.1)
-ctx.fillText('a😀s✅df', 50, 100)
+const requestHandler = (request, response) => {
+  const blob = fs.readFile('./check.png', (err, data) => {
+    if (err) console.error(err)
+    else {
+      response.setHeader('Content-Type', 'image/png')
+      response.setHeader('Content-Length', data.length)
+      response.end(data)
+    }
+  })
+  console.log(blob)
+}
 
-// Draw line under text
-var text = ctx.measureText('Awesome!')
-ctx.strokeStyle = 'rgba(0,0,0,0.5)'
-ctx.beginPath()
-ctx.lineTo(50, 102)
-ctx.lineTo(50 + text.width, 102)
-ctx.stroke()
+const server = http.createServer(requestHandler)
 
-console.log(canvas.toDataURL())
+server.listen(port, (err) => {
+  if (err) {
+    return console.log('something bad happened', err)
+  }
+
+  console.log(`server is listening on ${port}`)
+})
