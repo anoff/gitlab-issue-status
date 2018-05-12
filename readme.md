@@ -9,9 +9,8 @@
     - [canvas.loadIcons(iconArray)](#canvasloadiconsiconarray)
     - [canvas.createImage(issue, icons)](#canvascreateimageissue-icons)
     - [gitlab.tagToUrl(issueTag, baseUrl)](#gitlabtagtourlissuetag-baseurl)
-    - [gitlab.UrlToTag](#gitlaburltotag)
-    - [gitlab.getIssueStatus](#gitlabgetissuestatus)
-    - [server.startServer](#serverstartserver)
+    - [gitlab.UrlToTag(issueUrl)](#gitlaburltotagissueurl)
+    - [gitlab.getIssueStatus(issueUrl, apiToken)](#gitlabgetissuestatusissueurl-apitoken)
   - [Server](#server)
   - [Include in markdown](#include-in-markdown)
   - [Cache policy](#cache-policy)
@@ -79,9 +78,19 @@ Full issue URl e.g. `https://gitlab.com/api/v4/projects/myproject/issues/12`
 
 #### gitlab.getIssueStatus(issueUrl, apiToken)
 
-Fetch status
+Fetch isue status from GitLab server.
 
-#### server.startServer
+##### issueUrl
+
+Type: `string`
+
+Full issue URL e.g. `https://gitlab.com/api/v4/projects/myproject/issues/12`
+
+##### apiToken
+
+Type: `string`
+
+Valid API Token for the GitLab instance referred to in `issueUrl`
 
 ### Server
 
