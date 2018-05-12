@@ -4,6 +4,7 @@
 
 <!-- TOC depthFrom:2 depthTo:4 -->
 
+- [Example](#example)
 - [Usage](#usage)
   - [API](#api)
     - [canvas.loadIcons(iconArray)](#canvasloadiconsiconarray)
@@ -17,6 +18,24 @@
 - [License](#license)
 
 <!-- /TOC -->
+
+## Example
+
+Issue in state _opened_:
+
+`![](http://localhost:8080\?issue\=/group-milestones/something/issues/1)`
+![](example2.png)
+
+Issue in state _closed_:
+
+`![](http://localhost:8080\?issue\=group-milestones/something/issues/2)`
+![](example1.png)
+
+With added hyperlink:
+
+`[![](http://localhost:8080\?issue\=group-milestones/something/issues/2)](https://gitlab.com/group-milestones/something/issues/2)`
+[![](example1.png)](https://gitlab.com/group-milestones/something/issues/2)
+
 
 ## Usage
 
