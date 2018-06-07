@@ -36,6 +36,9 @@ With added hyperlink:
 `[![](http://localhost:8080\?issue\=group-milestones/something/issues/2)](https://gitlab.com/group-milestones/something/issues/2)`
 [![](example1.png)](https://gitlab.com/group-milestones/something/issues/2)
 
+Issue with title and larger font size:
+`![](http://localhost:8080/?issue=/group-milestones/issues/issues/1)`
+![](example3.png)
 
 ## Usage
 
@@ -117,7 +120,28 @@ The package comes with a default node server bundled that can be started using
 
 ```javascript
 const gitlabIssues = require('gitlab-issue-status')
-gitlabIssues.app() // start the server
+gitlabIssues.app(options) // start the server
+```
+
+Where options is an `Object` containing any of the following settings:
+
+```javascript
+{
+  iconArray: [{key: 'opened', path: 'full/path/to/png/resource/with/16by16.png'}], // an array containing icon resources and the key = issue state
+  baseUrl: 'https://gitlab.com/api/v4', // base URL of the gitlab server API
+  token: 'myPersonalAccessToken', // gitlab token with API rights for above server
+  port: 8080, // the port to start the server on
+  fontsize: 14, // font size of the first element (title if active, otherwise tag)
+  showTitle: true // show title of the issue as well as issue tag
+}
+```
+
+The following environment variables take precedence over the above options object:
+
+```text
+GITLAB_API_URL: overwrites options.baseUrl
+GITLAB_ACCESS_KEY: overwrites options.token
+PORT
 ```
 
 ### Include in markdown

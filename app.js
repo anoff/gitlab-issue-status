@@ -27,7 +27,7 @@ function init (opts = {}) {
       console.log(`Creating issue for ${issueTag} at URL: ${fullUrl}`)
       return getIssue(fullUrl, opts.token)
         .then(issue => {
-          return createImage(issue, icons)
+          return createImage(issue, icons, opts)
         })
     }))
     .then(server => {
