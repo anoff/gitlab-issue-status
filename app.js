@@ -4,20 +4,20 @@ module.exports = function app ({gitlab, canvas, server}) {
   const {tagToUrl, UrlToTag, getIssue} = gitlab
   const {startServer} = server
   const {loadIcons, createImage} = canvas
-  
+
   const baseUrl = process.env.GITLAB_API_URL
   const token = process.env.GITLAB_ACCESS_KEY
-  
+
   const port = process.env.PORT || 8080
-  
+
   const iconArray = [
     {key: 'closed', path: './assets/check.png'},
     {key: 'opened', path: './assets/cross.png'},
     {key: 'tool', path: './assets/tool.png'}
   ]
-  
+
   let icons
-  
+
   function init () {
     return loadIcons(iconArray)
       .then(res => {
