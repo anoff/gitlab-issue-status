@@ -1,6 +1,6 @@
 {
   "name": "gitlab-issue-status",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "get icons for gitlab issue status",
   "main": "index.js",
   "scripts": {
