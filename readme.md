@@ -2,6 +2,8 @@
 
 > get embeddable status badges for gitlab issues 🦊 🏷
 
+🚨 Please be aware that this code is not maintained and may contain vulnerable packages 🚨
+
 <!-- TOC depthFrom:2 depthTo:4 -->
 
 - [Example](#example)
